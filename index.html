@@ -300,6 +300,7 @@
                 height: 100%;
                 display: flex;
                 flex-direction: column;
+                width: 100%;
             }
             .keikat-otsikko {
                 font-size: 32px;
@@ -318,6 +319,41 @@
             .muoriso {
                 margin-bottom: 1em;
             }
+            .keikka-historiikki-otsikko {
+                margin-left: 20%;
+            }
+            .keikka-historiikki-otsikko:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            .keikka-historiikki-body {
+                width: 70%;
+                margin-left: 20%;
+            }
+            .keikka-historiikki-body-lista-esine {
+                margin-left: 2em;
+            }
+            .keikka-historiikki-body-lista-puolirivi {
+                height: 0.25em;
+            }
+            .keikkakuva-thumbnailit {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+                margin-right: auto;
+                max-width: 100%;
+                align-items: flex-start; /* don't stretch items to the height of the tallest image */
+            }
+            .thumbnail-linkki {
+                margin: 0.5em;
+                padding: 3px;
+                border: 2px solid red;
+                border-radius: 12px;
+                display: inline-block;
+                line-height: 0; /* remove inline img whitespace */
+            }
+            .thumbnail-linkki img { display: block; border-radius: inherit; }
         </style>
     </head>
     <body class="main">
@@ -589,88 +625,148 @@
                 <div class="keikat-sub">
                     <div class="keikat-otsikko">Tulevat keikat</div>
                     <div class="keikka-lista">
-                        <div>5.6.2026 - Maakinen Martinniemi 2026, Oulu</div>
-                        <div>10.7.2026 - Easy Living in Kemi</div>
-                        <div>17.7.2026 - Surmakuja, La Barre, Joensuu</div>
+                        <div class="keikka-historiikki-otsikko">5.6.2026 - Maakinen Martinniemi 2026, Oulu</div>
+                        <div class="keikka-historiikki-otsikko">10.7.2026 - Easy Living in Kemi</div>
+                        <div class="keikka-historiikki-otsikko">17.7.2026 - Surmakuja, La Barre, Joensuu</div>
                     </div>
                 </div>
                 <div class="keikat-sub">
                     <div class="keikat-otsikko">Menneet keikat</div>
                     <div class="keikka-lista">
                         <details name="keikka">
-                            <summary>11.7.2020 - Tyrärock, Tyrnävä</summary>
+                            <summary class="keikka-historiikki-otsikko">11.7.2020 - Tyrärock, Tyrnävä</summary>
                         </details>
                         <details name="keikka">
-                            <summary>1.8.2020 - Syynirock, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">1.8.2020 - Syynirock, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>12.3.2022 - Hämet Burns 2, Kuusamo</summary>
+                            <summary class="keikka-historiikki-otsikko">12.3.2022 - Hämet Burns 2, Kuusamo</summary>
                         </details>
                         <details name="keikka">
-                            <summary>6.1.2023 - Syyllisyys-Fest I - Oulu, Tukikohta</summary>
+                            <summary class="keikka-historiikki-otsikko">6.1.2023 - Syyllisyys-Fest I - Oulu, Tukikohta</summary>
                         </details>
                         <details name="keikka">
-                            <summary>1.4.2023 - Club Labra, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">1.4.2023 - Club Labra, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>4.11.2023 - Syyllisyys-Fest II - Oulu, Tukikohta</summary>
+                            <summary class="keikka-historiikki-otsikko">4.11.2023 - Syyllisyys-Fest II - Oulu, Tukikohta</summary>
                         </details>
                         <details name="keikka">
-                            <summary>4.4.2024 - 45 Special, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">4.4.2024 - 45 Special, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>20.4.2024 - Club Labra, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">20.4.2024 - Club Labra, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>10.5.2024 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
+                            <summary class="keikka-historiikki-otsikko">10.5.2024 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
                         </details>
                         <details name="keikka">
-                            <summary>12.7.2024 - Pop-up näyttämö Klonkka, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">12.7.2024 - Pop-up näyttämö Klonkka, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>20.7.2024 - Syynirock, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">20.7.2024 - Syynirock, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary><s>1-3.8.2024 - Epäjohdonmukaisten tanssiaiset osa 2: Ihmeiden hinta</s></summary>
+                            <summary class="keikka-historiikki-otsikko"><s>1-3.8.2024 - Epäjohdonmukaisten tanssiaiset osa 2: Ihmeiden hinta</s></summary>
                         </details>
                         <details name="keikka">
-                            <summary>14.9.2024 - Pub Sarvi, Rovaniemi</summary>
+                            <summary class="keikka-historiikki-otsikko">14.9.2024 - Pub Sarvi, Rovaniemi</summary>
                         </details>
                         <details name="keikka">
-                            <summary>20.12.2024 - Joulupunkki - Oulu, Pop-up Klonkka</summary>
+                            <summary class="keikka-historiikki-otsikko">20.12.2024 - Joulupunkki - Oulu, Pop-up Klonkka</summary>
                         </details>
                         <details name="keikka">
-                            <summary>1.2.2025 - Syyllisyys-Fest III - Oulu, Tukikohta</summary>
+                            <summary class="keikka-historiikki-otsikko">1.2.2025 - Syyllisyys-Fest III - Oulu, Tukikohta</summary>
                         </details>
                         <details name="keikka">
-                            <summary>18.4.2025 - Kannus, Monari</summary>
+                            <summary class="keikka-historiikki-otsikko">18.4.2025 - Kannus, Monari</summary>
                         </details>
                         <details name="keikka">
-                            <summary>19.4.2025 - Rattoradio studio live</summary>
+                            <summary class="keikka-historiikki-otsikko">19.4.2025 - Rattoradio studio live</summary>
                         </details>
                         <details name="keikka">
-                            <summary>7.6.2025 - Pop-up näyttämö Klonkka, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">7.6.2025 - Pop-up näyttämö Klonkka, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>19.7.2025 - Syynirock, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">19.7.2025 - Syynirock, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>14.8.2025 - Taiteiden yö, Kuusamo</summary>
+                            <summary class="keikka-historiikki-otsikko">14.8.2025 - Taiteiden yö, Kuusamo</summary>
                         </details>
                         <details name="keikka">
-                            <summary>22.11.2025 - Eipä Vissiin! -festari, Tukikohta, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">22.11.2025 - Eipä Vissiin! -festari, Tukikohta, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>13.03.2026 - Syyllisyys-Fest IV - Oulu, Tukikohta</summary>
+                            <summary class="keikka-historiikki-otsikko">13.03.2026 - Syyllisyys-Fest IV - Oulu, Tukikohta</summary>
                         </details>
                         <details name="keikka">
-                            <summary>14.03.2026 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
+                            <summary class="keikka-historiikki-otsikko">14.03.2026 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
                         </details>
                         <details name="keikka">
-                            <summary>22.5.2026 - Club Labra, Oulu</summary>
+                            <summary class="keikka-historiikki-otsikko">22.5.2026 - Club Labra, Oulu</summary>
                         </details>
                         <details name="keikka">
-                            <summary>23.5.2026 - Alavus on the rocks, Tuurin nuorisoseura, Alavus</summary>
+                            <summary class="keikka-historiikki-otsikko">23.5.2026 - Alavus on the rocks, Tuurin nuorisoseura, Alavus</summary>
+                            <p class="keikka-historiikki-body">
+                                <div>
+                                    Väärä käännös Vetelin Kirkkotanhualla. Ajellaan pikkuteitä pitkin epämääräisiin suuntiin yrittäen päästä takaisin päätielle. Yhtäkkiä edessä on liikenteenohjaaja; edessä on autonäyttely. Ohjaaja puhuu hämmentäviä radiopuhelimeen.
+                                    Parempi kääntyä takaisin. Tämän vuoksi keikkamatkoille varataan ylimääräistä ajoaikaa.
+                                </div>
+                                <br>
+                                <div>
+                                    Keikka on Tuurin nuoriseuran kylätalolla. Yläkerta on varattu bäkkäriksi, joten bändillä on kerrankin kunnolla tilaa ennen keikkaa.
+                                    Kaljaa ja ruokaa on varattu enemmän kuin riittävästi. Mikäpä tässä on ollessa. Järkkäyksen puolesta homma on vedetty festarien
+                                    kokoon nähden muutenkin todella huolella. Paikalla on päämiksaajan lisäksi erillinen monitorimiksaaja ja valomies.
+                                </div>
+                                <br>
+                                <div>
+                                    Keikka on alusta asti sekoilua ja heilumista. Pogoaminen vaatii kuitenkin veronsa ja kolmannen biisin kohdalla
+                                    Antin kitaran hihna katkeaa. Biisi saadaan kuitenkin vedettyä loppuun ja pelastava enkeli monitorimiksaajan muodossa
+                                    on jo tulossa paikalle roudariteippirullan kanssa. Hätäratkaisu toimii parin biisin ajan, mutta Kodin loppupuolella teippaus
+                                    pettää uudestaan. Nyt roudari vie koko kitaran mukanaan korjattavaksi. Pienen spekuloinnin jälkeen keikkasettiä
+                                    muutetaan lennosta ja kahden biisin ajan Antti keskittyy heilumiseen, hyppimiseen ja huutamiseen. Pian miksaaja saapuu kuitenkin
+                                    kädessään kitara johon on kääritty enemmän teippiä kuin laki sallii. Keikka saadaan vedettyä loppuun, yleisö hurraa ja
+                                    kaikilla on hauskaa. Keikan jälkeen nainen tulee lavalle kädessään terveysside (käyttämätön) ja pyytää kaikilta nimikirjoitukset
+                                    siihen mukanaan lupaus siitä että hän kehystää sen.
+                                </div>
+                                <br>
+                                <div>
+                                    Kaiken kaikkiaan oikein onnistunut keikka.
+                                </div>
+                                <br>
+                                <div>Festarin kattaus:</div>
+                                <div class="keikka-historiikki-body-lista-puolirivi"></div>
+                                <div class="keikka-historiikki-body-lista-esine">Observed</div>
+                                <div class="keikka-historiikki-body-lista-esine">Cardinal Fleet</div>
+                                <div class="keikka-historiikki-body-lista-esine">Tähän Asti</div>
+                                <div class="keikka-historiikki-body-lista-esine">Huoneen Syyllisin Mies</div>
+                                <div class="keikka-historiikki-body-lista-esine">Bloodride</div>
+                                <div class="keikka-historiikki-body-lista-esine">Wolftopia</div>
+                                <br>
+                                <div>Levyt joita kuunneltiin matkalla:</div>
+                                <div class="keikka-historiikki-body-lista-puolirivi"></div>
+                                <div class="keikka-historiikki-body-lista-esine">The Coffinshakers - Graves, release your dead</div>
+                                <div class="keikka-historiikki-body-lista-esine">Jolly Jumpers - Rural Slang</div>
+                                <div class="keikka-historiikki-body-lista-esine">Reverend Bizarre - Crush the Insects</div>
+                                <div class="keikka-historiikki-body-lista-esine">YUP - Toppatakkeja ja Toledon Terästä</div>
+                                <div class="keikka-historiikki-body-lista-esine">Jex Thoth - Jex Thoth</div>
+                                <div class="keikka-historiikki-body-lista-esine">Alice Cooper - Brutal Planet</div>
+                                <div class="keikka-historiikki-body-lista-esine">Avenged Sevenfold - Life is but a dream</div>
+                                <div class="keikka-historiikki-body-lista-esine">Tehosekoitin - Köyhät syntiset</div>
+                                <div class="keikka-historiikki-body-lista-esine">Angine de Poitrine - Vol II.</div>
+                                <div class="keikka-historiikki-body-lista-esine">Counting Lifeboats - Soelitude</div>
+                                <div class="keikka-historiikki-body-lista-esine">Primus - They can't all be zingers</div>
+                                <div class="keikka-historiikki-body-lista-esine">Tom Waits - Rain dogs</div>
+                                <br>
+                                <br>
+                                <div class="keikkakuva-thumbnailit">
+                                    <a href="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-juliste-full.jpg" target="_blank" class="thumbnail-linkki"><img src="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-juliste-thumbnail.jpg"/></a>
+                                    <a href="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva1-full.jpg" target="_blank" class="thumbnail-linkki"><img src="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva1-thumbnail.jpg"/></a>
+                                    <a href="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva2-full.jpg" target="_blank" class="thumbnail-linkki"><img src="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva2-thumbnail.jpg"/></a>
+                                    <a href="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva3-full.jpg" target="_blank" class="thumbnail-linkki"><img src="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva3-thumbnail.jpg"/></a>
+                                    <a href="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva4-full.jpg" target="_blank" class="thumbnail-linkki"><img src="keikkakuvat\2026-05-23-alavus-on-the-rocks\2026-05-23-alavus-on-the-rocks-keikkakuva4-thumbnail.jpg"/></a>
+                                </div>
+                            </p>
                         </details>
                     </div>
                 </div>
