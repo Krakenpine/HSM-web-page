@@ -1,0 +1,711 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Huoneen syyllisin mies</title>
+        <style>
+            .main {
+                background: black;
+                color: red;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: url(hb-kursori1.png), auto;
+            }
+            .navbar {
+                width: 100%;
+                z-index: 100;
+            }
+            .nav-topic {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 64px;
+                height: 128px;
+                background: 
+                    linear-gradient(
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.10) 20%,
+                        rgba(0, 0, 0, 0.10) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.10) 20%,
+                        rgba(0, 0, 0, 0.10) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    url(Galaxy0.gif);
+            }
+            .menu {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: center;
+                height: 64px;
+            }
+            .menu-item {
+                padding-left: 1em;
+                padding-right: 1em;
+                height: 100%;
+                border: 1px solid red;
+                border-radius: 12px;
+                margin-left: 1em;
+                margin-right: 1em;
+                width: 10em;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .menu-item:hover {
+                background: url(spaz.gif);
+                background-position: center;
+                background-size: 90% 90%;
+                animation: taustapsykoosi 1s infinite;
+                animation-direction: alternate;
+            }
+            @keyframes taustapsykoosi {
+                from {background-size: 100% 100%;}
+                to {background-size: 50% 50%;}
+            }
+            a {
+                color: red;
+                text-decoration: none;
+            }
+            a:hover {
+                color: red;
+                text-decoration: none;
+            }
+            .body-osio {
+                width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 32px;
+                background: 
+                    linear-gradient(
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.60) 20%,
+                        rgba(0, 0, 0, 0.60) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.60) 20%,
+                        rgba(0, 0, 0, 0.60) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    url(bgbricks.gif);
+            }
+            .sektio {
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+            .sivu-topic {
+                font-size: 32px;
+                padding-top: 1em;
+                padding-bottom: 1em;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 30%;
+            }
+            h1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .video {
+                margin: 1em;
+            }
+            .bbar {
+                margin-top: 2em;
+                margin-bottom: 1em;
+            }
+            .julkaisut-sisalto {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                font-size: 20px;
+            }
+            .levy {
+                margin-left: 1em;
+                margin-right: 1em;
+                display: flex;
+                flex-direction: column;
+
+            }
+            .levyn-nimi {
+                background:
+                    linear-gradient(
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.4) 20%,
+                        rgba(255, 255, 255, 0.5) 50%,
+                        rgba(0, 0, 0, 0.4) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 1) 0%,
+                        rgba(0, 0, 0, 0.4) 20%,
+                        rgba(0, 0, 0, 0.4) 80%, 
+                        rgba(0, 0, 0, 1) 100%
+                    ),
+                    url(Glitter21.gif);
+                    background-blend-mode: multiply;
+                padding: 0.5em;
+                text-align: center;
+                border-radius: 12px;
+                text-shadow:
+                    0px 0px 6px black,
+                    0px 3px 4px black,
+                    0px -2px 4px black,
+                    3px 0px 4px black,
+                    3px 3px 4px black,
+                    3px -3px 4px black,
+                    -3px 0px 4px black,
+                    -3px 3px 4px black,
+                    -3px -3px 4px black;
+
+            }
+            .levykuva-hack {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column-reverse
+            }
+            .levykuva {
+                width: 15vw;
+                margin-top: 1em;
+                border-radius: 12px;
+            }
+            .luuranko {
+                position:fixed;
+                top: 0px;
+                left: 64px;
+                z-index: 666;
+            }
+            .haulikko {
+                position:fixed;
+                top: 0px;
+                right: 64px;
+                z-index: 666;
+            }
+            .vali {
+                color: rgba(0,0,0,0);
+            }
+            .bandi-main {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                font-size: 20px;
+            }
+            .bandi-kuvaus {
+                padding: 2em;
+                width: 50%;
+            }
+            .bandi-otsikko {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .bandi-kuva-main {
+                display: flex;
+                width: 70%;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .bandi-kuva-kuva {
+                width: 100%;
+                object-fit: contain;
+            }
+            .jasenet {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin-top: 1em;
+                justify-content: space-around;
+
+            }
+            .jasen-main {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                align-items: center;
+            }
+            .jasen-kuvaus {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .jasen-tieto {
+                display: flex;
+                justify-content: center;
+                margin-left: 1em;
+                margin-right: 1en;
+            }
+            .jasen-kuva {
+                margin-bottom: 1em;
+                width: 20vw;
+            }
+            .yhteys {
+                display: flex;
+                flex-direction: column;
+                justify-content:space-around;
+                align-items: center;
+            }
+            .yhteys-email {
+                display: flex;
+                flex-direction: row;
+                justify-content:space-around;
+                align-items: center;
+            }
+            .spotify {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .spotify-teksti {
+                margin: 1em;
+                font-size: 24px;
+            }
+            .spotify-sisalto {
+                display: flex;
+                flex-direction: row;
+            }
+            .keikat-sub {
+                padding-top: 1em;
+                padding-bottom: 1em;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+            .keikka-lista {
+                font-size: 24px;
+                margin-left: 2em;
+                margin-right: 2em;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            .keikat-otsikko {
+                font-size: 32px;
+            }
+            .julkaisu-vali {
+                height: 4em;
+            }
+            .kuuntele-sisalto {
+                display: flex;
+                flex-direction: column;
+            }
+            .kuuntele-rivi {
+                display: flex;
+                flex-direction: row;
+            }
+            .muoriso {
+                margin-bottom: 1em;
+            }
+        </style>
+    </head>
+    <body class="main">
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/fi_FI/sdk.js#xfbml=1&version=v17.0" nonce="GpAfSbUv"></script>
+        <div class="navbar">
+            <h1 class="nav-topic">
+                <img src="skull.gif" alt="Skull">
+                <div>Huoneen syyllisin mies</div>
+                <img src="skull.gif" alt="Skull">
+            </h1>
+            <div class="menu">
+                <a class="menu-item" href="#bandi">Bändi</a>
+                <a class="menu-item" href="#julkaisut">Julkaisut</a>
+                <a class="menu-item" href="#kuuntele">Kuuntele</a>
+                <a class="menu-item" href="#keikat">Keikat</a>
+                <a class="menu-item" href="#yhteys">Yhteys</a>
+            </div>
+        </div>
+
+        <div class="body-osio">
+            <div id="bandi" class="sektio">
+                <div class="sivu-topic">
+                    <img src="ltorch.gif" alt="Torch">
+                    <div>Bändi</div>
+                    <img src="rtorch.gif" alt="Torch">
+                </div>
+                <div class="bandi-main">
+                    <div class="bandi-kuvaus">
+                        <div class="bandi-otsikko"><b>Ota askel kohti pimeää</b></div>
+                        <br>
+                        <div>Huoneen Syyllisin Mies, kavereiden kesken Hösmi, on oululais-kuusamolainen räminäryhmä. Bändin tarina sai alkunsa vuonna 2019, ja tekeminen on kasvanut isommaksi vuosi vuodelta.</div>
+                        <br>
+                        <div>HSM julkaisee säännöllisesti uutta musiikkia, jossa kuuluu vaikutteita niin punkin kuin metallin eri sävyistä. Uutta sekametelisoppaa on tarjolla kevättalvella 2026, kun HSM julkaisee kolmannen albuminsa.</div>
+                        <br>
+                        <div>Puhuttelevat ja syvissäkin vesissä kulkevat sanoitukset yhdistyvät polveileviin, mutta ytimekkäisiin sävellyksiin, jotka pitävät kuulijan otteessaan. Aktiivisesti keikkaileva Huoneen Syyllisin Mies on myös energinen livebändi, jonka keikalla voi sattua ja tapahtua mitä tahansa.</div>
+                    </div>
+                    <div class="bandi-kuva-main">
+                        <img class="bandi-kuva-kuva" src="band2.jpg" alt="Huoneen Syyllisin Mies">
+                        <div class="jasenet">
+                            <div class="jasen-kuvaus">
+                                <div class="jasen-tieto">Atte</div>
+                                <div class="jasen-tieto">-</div>
+                                <div class="jasen-tieto">Rummut</div>
+                            </div>
+
+                            <div class="jasen-kuvaus">
+                                <div class="jasen-tieto">Lauri</div>
+                                <div class="jasen-tieto">-</div>
+                                <div class="jasen-tieto">Kitara ja huuto</div>
+                            </div>
+                            <div class="jasen-kuvaus">
+                                <div class="jasen-tieto">Antti</div>
+                                <div class="jasen-tieto">-</div>
+                                <div class="jasen-tieto">Kitara ja huuto</div>
+                            </div>
+                            <div class="jasen-kuvaus">
+                                <div class="jasen-tieto">Hannu</div>
+                                <div class="jasen-tieto">-</div>
+                                <div class="jasen-tieto">Basso ja huuto</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="bloodbar.gif" alt="Bloodbar" class="bbar">
+
+            <div id="julkaisut" class="sektio">
+                <div class="sivu-topic">
+                    <img src="ltorch.gif" alt="Torch">
+                    <div>Julkaisut</div>
+                    <img src="rtorch.gif" alt="Torch">
+                </div>
+                <div class="julkaisut-sisalto">
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Eläviä koneita ja poltettuja toiveita</h3>
+                        <div>13.3.2026</div>
+                        <div class="vali">-</div>
+                            <div>1. Tervetuloa tuotantolinjalle!</div>
+                            <div>2. Tehdas</div>
+                            <div>3. Juoksun on jatkuttava</div>
+                            <div>4. Koti</div>
+                            <div>5. Väärällä kaistalla</div>
+                            <div>6. Mustaa vettä</div>
+                            <div>7. Valkoista kohinaa</div>
+                            <div>8. Varjo elävien maassa</div>
+                            <div>9. Maalaus</div>
+                            <div>10. Moottori</div>
+                            <div>11. Risti</div>
+                            <div>12. Mekaanisen käden kosketus</div>
+                            <div>13. Kantalahden hiihtokisat 1944</div>
+                            <div>14. Nyt</div>
+                            <div>15. Tyhjyys</div>
+                        <div class="levykuva-hack">
+                            <img src="elavia-koneita-ja-poltettuja-toiveita.jpg" class="levykuva" alt="Eläviä koneita ja poltettuja toiveita">
+                        </div>
+                    </div>
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Keskiluokka-EP</h3>
+                        <div>5.9.2025</div>
+                        <div class="vali">-</div>
+                            <div>1. Keskiluokasta päivää</div>
+                            <div>2. Mielipuoli</div>
+                            <div>3. Hessu</div>
+                            <div>4. Osakesijoittaja</div>
+                        <div class="levykuva-hack">
+                            <img src="keskiluokka-ep.jpg" class="levykuva" alt="Keskiluokka-EP">
+                        </div>
+                    </div>
+                </div>
+                <div class="julkaisut-sisalto">
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Jäähyväiset sivilisaatiolle</h3>
+                        <div>20.4.2024</div>
+                        <div class="vali">-</div>
+                            <div>1. Vasili Arkhipovin erehdys</div>
+                            <div>2. Therac-25</div>
+                            <div>3. Tänään</div>
+                            <div>4. Keittiö</div>
+                            <div>5. Sivilisaatio</div>
+                            <div>6. Pekka</div>
+                            <div>7. Syyllisyys</div>
+                            <div>8. Lemminkäinen</div>
+                            <div>9. Leikin kuollutta</div>
+                            <div>10. Uusi aamu</div>
+                            <div>11. Majava</div>
+                            <div>12. Turhuuksien turhuus</div>
+                            <div>13. Valtatie etelään</div>
+                            <div>14. Pimeys</div>
+                        <div class="levykuva-hack">
+                            <img src="jaahyvaiset-sivilisaatiolle.jpg" class="levykuva" alt="Jäähyväiset sivilisaatiolle">
+                        </div>
+                    </div>
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Murhenäytelmästä tilastotiedoksi</h3>
+                        <div>6.1.2023</div>
+                        <div class="vali">-</div>
+                        <div>1. Douglas Haigin menetelmä '94</div>
+                        <div>2. Kirvesmurha (Misfits - Death Comes Ripping)</div>
+                        <div>3. Nuke!</div>
+                        <div>4. Banzai!</div>
+                        <div>5. Fukushima!</div>
+                        <div>6. Herra Synti ja Sairaus</div>
+                        <div>7. Uusi Kain</div>
+                        <div>8. Roope Ankan modus operandi</div>
+                        <div>9. Poltettu maa</div>
+                        <div>10. Suohauta</div>
+                        <div>11. Elämäntuomio</div>
+                        <div>12. Toukka</div>
+                        <div>13. Douglas Haigin menetelmä '24</div>
+                        <div>14. Hiljaisuus</div>
+                        <div class="levykuva-hack">
+                            <img src="murhenaytelmasta-tilastotiedoksi.jpg" class="levykuva" alt="Murhenäytelmästä tilastotiedoksi">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="julkaisu-vali"></div>
+                <div class="julkaisut-sisalto">
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Päässä ja piuhoissa pätkii</h3>
+                        <div>1.5.2021</div>
+                        <div class="vali">-</div>
+                        <div>1. Jurristi</div>
+                        <div>2. Työkkärikurssit</div>
+                        <div>3. Eppuku</div>
+                        <div>4. Mutaatio</div>
+                        <div>5. 3 euron juustoa</div>
+                        <div>6. Tangomarkkinat</div>
+                        <div>7. Rauhassa köllötellä</div>
+                        <div class="levykuva-hack">
+                            <img src="paassa-ja-piuhoissa-patkii.jpg" class="levykuva" alt="Päässä ja piuhoissa pätkii">
+                        </div>
+                    </div>
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Mustaa vettä ja punaista olutta</h3>
+                        <div>10.2.2020</div>
+                        <div class="vali">-</div>
+                        <div>1. Viagra</div>
+                        <div>2. Liikuntatavoitteet</div>
+                        <div>3. Behringer</div>
+                        <div>4. Facebook-angsti</div>
+                        <div class="levykuva-hack">
+                            <img src="mustaa-vetta-ja-punaista-olutta.jpg" class="levykuva" alt="Mustaa vettä ja punaista olutta">
+                        </div>
+                    </div>
+                </div>
+                <div class="julkaisu-vali"></div>
+                <div class="julkaisut-sisalto">
+                    <div class="levy">
+                        <h3 class="levyn-nimi">Piti siivota treenis mutta juotiinkin vaan kaljaa</h3>
+                        <div>2.6.2019</div>
+                        <div class="vali">-</div>
+                        <div>1. (Biisin nimi on) Sota</div>
+                        <div>2. Sekakäyttö</div>
+                        <div>3. Seksibiisi (Ei hentai)</div>
+                        <div>4. Salaliitto-juttu</div>
+                        <div class="levykuva-hack">
+                            <img src="piti-siivota-treenis-mutta-juotiinkin-vaan-kaljaa.jpg" class="levykuva" alt="Piti siivota treenis mutta juotiinkin vaan kaljaa">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="bloodbar.gif" alt="Bloodbar" class="bbar">
+
+            <div id="kuuntele" class="sektio">
+                <div class="sivu-topic">
+                    <img src="ltorch.gif" alt="Torch">
+                    <div>Kuuntele</div>
+                    <img src="rtorch.gif" alt="Torch">
+                </div>
+                <div class="kuuntele-sisalto">
+                    <div class="kuuntele-rivi">
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/KIdr6tMaUSk?si=Kv4btIaBb46naBAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                       
+                        </div>
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/8g-vIXsAWBE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="kuuntele-rivi">
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/jb0vGuql_V4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/v7EUb4v-gEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="kuuntele-rivi">
+                        <div class="video">
+                            <a href="https://www.youtube.com/watch?v=jF3Gk8CDFVAo">
+                                <img src="levy3-youtube.jpg" alt="Päässä ja piuhoussa pätkii - Youtube">
+                            </a>
+                            <a href="https://www.youtube.com/watch?v=joM78jEMjv0">
+                                <img src="levy2-youtube.jpg" alt="Mustaa vettä ja punaista olutta - Youtube">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="kuuntele-rivi">
+                        <div class="video">
+                            <a href="https://www.youtube.com/watch?v=Sf_UfobiqMo">
+                                <img src="levy1-youtube.jpg" alt="Piti siivota treenis mutta juotiinkin vaan kaljaa - Youtube">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="spotify">
+                        <div class="spotify-teksti">Nyt myös Spotifyssä:</div>
+                        <div class="spotify-sisalto">
+                            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/6bX77RN294OG4TWaU7dRGc?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                        </div>
+                    </div>
+
+                    <div class="spotify">
+                        <div class="spotify-teksti">Ja Bandcampissa diginä ostettavana:</div>
+                        <div class="spotify-sisalto">
+                            <iframe style="border: 0; width: 100%; height: 120px; margin-right:1em" src="https://bandcamp.com/EmbeddedPlayer/album=1157280855/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://huoneensyyllisinmies.bandcamp.com/album/keskiluokka-ep">Keskiluokka-EP by Huoneen syyllisin mies</a></iframe>
+                            <iframe style="border: 0; width: 100%; height: 120px; margin-right:1em" src="https://bandcamp.com/EmbeddedPlayer/album=1705882941/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://huoneensyyllisinmies.bandcamp.com/album/j-hyv-iset-sivilisaatiolla">Jäähyväiset sivilisaatiolla by Huoneen syyllisin mies</a></iframe>
+                            <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=7866252/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://huoneensyyllisinmies.bandcamp.com/album/murhen-ytelm-st-tilastotiedoksi">Murhenäytelmästä tilastotiedoksi by Huoneen syyllisin mies</a></iframe>                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <img src="bloodbar.gif" alt="Bloodbar" class="bbar">
+
+            <div id="keikat" class="sektio">
+                <div class="keikat-sub">
+                    <div class="keikat-otsikko">Tulevat keikat</div>
+                    <div class="keikka-lista">
+                        <div>5.6.2026 - Maakinen Martinniemi 2026, Oulu</div>
+                        <div>10.7.2026 - Easy Living in Kemi</div>
+                        <div>17.7.2026 - Surmakuja, La Barre, Joensuu</div>
+                    </div>
+                </div>
+                <div class="keikat-sub">
+                    <div class="keikat-otsikko">Menneet keikat</div>
+                    <div class="keikka-lista">
+                        <details name="keikka">
+                            <summary>11.7.2020 - Tyrärock, Tyrnävä</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>1.8.2020 - Syynirock, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>12.3.2022 - Hämet Burns 2, Kuusamo</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>6.1.2023 - Syyllisyys-Fest I - Oulu, Tukikohta</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>1.4.2023 - Club Labra, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>4.11.2023 - Syyllisyys-Fest II - Oulu, Tukikohta</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>4.4.2024 - 45 Special, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>20.4.2024 - Club Labra, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>10.5.2024 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>12.7.2024 - Pop-up näyttämö Klonkka, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>20.7.2024 - Syynirock, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary><s>1-3.8.2024 - Epäjohdonmukaisten tanssiaiset osa 2: Ihmeiden hinta</s></summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>14.9.2024 - Pub Sarvi, Rovaniemi</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>20.12.2024 - Joulupunkki - Oulu, Pop-up Klonkka</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>1.2.2025 - Syyllisyys-Fest III - Oulu, Tukikohta</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>18.4.2025 - Kannus, Monari</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>19.4.2025 - Rattoradio studio live</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>7.6.2025 - Pop-up näyttämö Klonkka, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>19.7.2025 - Syynirock, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>14.8.2025 - Taiteiden yö, Kuusamo</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>22.11.2025 - Eipä Vissiin! -festari, Tukikohta, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>13.03.2026 - Syyllisyys-Fest IV - Oulu, Tukikohta</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>14.03.2026 - Alakulttuuritalo Kramsu, Jyväskylä</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>22.5.2026 - Club Labra, Oulu</summary>
+                        </details>
+                        <details name="keikka">
+                            <summary>23.5.2026 - Alavus on the rocks, Tuurin nuorisoseura, Alavus</summary>
+                        </details>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="yhteys" class="sektio">
+                <div class="sivu-topic">
+                    <img src="ltorch.gif" alt="Torch">
+                    <div>Yhteys</div>
+                    <img src="rtorch.gif" alt="Torch">
+                </div>
+                <div class="yhteys">
+                    <div class="yhteys-email">
+                        <img src="handemail.gif" alt="Email">
+                        Yhteydenotot osoitteeseen huoneensyyllisinmies@gmail.com
+                    </div>
+                    <div class="muoriso">
+                        <div>Instagram:</div>
+                        <a href="https://www.instagram.com/huoneensyyllisinmies/"><img src="1_Instagram_colored_svg_1-512.webp" style="width: 5em"></a>
+                    </div>
+                    <div class="muoriso">
+                        Ja doomer-muorison Facebook:
+                    </div>
+                    <div>
+                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100088480037829" data-tabs="" data-width="300" data-height="" data-small-header="true" data-adapt-container-width="false" data-hide-cover="true" data-show-facepile="false"><blockquote cite="https://www.facebook.com/profile.php?id=100088480037829" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100088480037829">Huoneen syyllisin mies</a></blockquote></div>                    </div>
+                </div>
+            </div>
+
+            <img src="xmao-3.gif" alt="Cat" class="bbar">
+
+        </div>
+
+        <img src="esc_skeleton_004.gif" alt="Luuranko" class="luuranko">
+
+        <img src="Shotgun-01.gif" alt="Haulikko" class="haulikko">
+    </body>
+</html>
