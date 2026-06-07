@@ -21,6 +21,9 @@ jobs:
           password: ${{ secrets.PW }}
           port: 22
 
-          source: "."
+          source: |
+            .
+            !.git
+            !.github
           target: ${{ secrets.FOLDER }}
           debug: true
