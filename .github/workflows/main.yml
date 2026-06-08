@@ -14,16 +14,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Copy repository files to server
-        uses: appleboy/scp-action@v0.1.7
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ secrets.IP }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PW }}
           port: 22
 
-          source: |
-            .
-            !.git
-            !.github
+          source: ".,!github"
           target: ${{ secrets.FOLDER }}
           debug: true
